@@ -1,22 +1,16 @@
-#random:-random randint()-for taking random int vaue
-#random.random():-for taking random float value
-#random.choice():-to make choice of random value
-#random.shuffle:-to make random shuffle of list
-import random
-num=random.randint(1,100)
-attempts=0
-while(attempts<7):
-    a=int(input("Choose a number"))
-    attempts+=1
-    if(a>num):
-      print("Too High")
-    elif(a==num):
-        print("Number Found")
-        break
-    elif(a<num):
-       print("Number is too low")
-    else:
-       print("Number not found")
+def fun(sentence):
+    words=sentence.lower().split()
+    freq={}
 
-print(f"Attempts : {attempts}")
-        
+    for word in words:
+    
+        if word in freq:
+            freq[word]+=1
+        else:
+            freq[word]=1
+
+    return freq
+
+text="Python is a easy and python is powerfull programming language"
+result = fun(text)
+print(result)
